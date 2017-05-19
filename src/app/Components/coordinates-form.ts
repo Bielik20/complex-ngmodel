@@ -20,14 +20,15 @@ import { MyCoordinates } from "app/Models/Coordinates";
     <div>
       <label>longitude</label>
       <input
+        required
         type="number"
-        [(ngModel)]="value.longitude"
+        [ngModel]="value?.longitude" (ngModelChange)="handleInput('longitude', $event)"
       />
 
       <label>latitude</label>
       <input
         type="number"
-        [(ngModel)]="value.latitude"
+        [ngModel]="value?.latitude" (ngModelChange)="handleInput('latitude', $event)"
       />
     </div>
   `,
@@ -43,5 +44,10 @@ export class CoordinatesFormComponent extends ValueAccessorBase<MyCoordinates> {
 
   constructor() {
     super();
+  }
+
+  handleInput(prop, value) {
+    this.value[prop] = value;
+    this.value = { ...this.value };
   }
 }

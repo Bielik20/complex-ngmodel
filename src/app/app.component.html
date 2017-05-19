@@ -9,15 +9,17 @@
     name="simpleValue"
     label="Value 1"
     placeholder="Enter a hexadecimal value"
-    [(ngModel)]="simpleValue">
+    [(ngModel)]="simpleValue"
+    (ngModelChange)='test("simple")'>
   </form-text>
 
   <coordinates-form
     required
     hexadecimal
     name="coordinatesModel"
-    [(ngModel)]="coordinatesModel">
+    [(ngModel)]="coordinatesModel"
+    (ngModelChange)='test("coordinates")'>
   </coordinates-form>
 
-  <button type="Submit" [disabled]="!form.valid">Submit</button>
+  <button type="Submit">Submit</button>
 </form>

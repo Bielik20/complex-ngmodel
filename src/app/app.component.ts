@@ -19,4 +19,9 @@ export class AppComponent {
     alert(`Submit: ${JSON.stringify(value)}`);
   }
 
+  test(value) {
+    console.log(value)
+    console.log('--------------')
+  }
+
 }

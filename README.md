@@ -1,5 +1,6 @@
 # ComplexNgmodel
 
+Related [StackOverflow question](http://stackoverflow.com/questions/44074925/binding-ngmodel-to-complex-data/).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
