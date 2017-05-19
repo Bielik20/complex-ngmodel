@@ -5,9 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { FormTextComponent } from './Components/input';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormTextComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,16 @@
 <h1>
   {{title}}
 </h1>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+  <form-text
+    required
+    hexadecimal
+    name="simpleValue"
+    label="Value 1"
+    placeholder="Enter a hexadecimal value"
+    [(ngModel)]="simpleValue">
+  </form-text>
+
+  <button type="Submit" [disabled]="!form.valid">Submit</button>
+</form>
