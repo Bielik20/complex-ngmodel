@@ -12,5 +12,12 @@
     [(ngModel)]="simpleValue">
   </form-text>
 
+  <coordinates-form
+    required
+    hexadecimal
+    name="coordinatesModel"
+    [(ngModel)]="coordinatesModel">
+  </coordinates-form>
+
   <button type="Submit" [disabled]="!form.valid">Submit</button>
 </form>

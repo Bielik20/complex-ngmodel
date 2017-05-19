@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { FormTextComponent } from './Components/input';
+import { CoordinatesFormComponent } from './Components/coordinates-form';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormTextComponent
+    FormTextComponent,
+    CoordinatesFormComponent
   ],
   imports: [
     BrowserModule,
