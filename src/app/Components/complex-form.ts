@@ -16,6 +16,8 @@ import {
 import {ElementBase} from '../Base/element-base';
 import {animations} from '../Base/animations';
 import {ComplexModel} from '../Models/complex-model';
+import { Observable } from "rxjs/Observable";
+import { ValidationResult } from '../Base/validate';
 
 @Component({
   selector: 'complex-form',
@@ -60,8 +62,6 @@ export class FormComplexComponent extends ElementBase<ComplexModel> {
 
   @ViewChild(NgModel) model: NgModel;
 
-  public identifier = `form-complex-${identifier++}`;
-
   constructor(
     @Optional() @Inject(NG_VALIDATORS) validators: Array<any>,
     @Optional() @Inject(NG_ASYNC_VALIDATORS) asyncValidators: Array<any>,
@@ -73,6 +73,8 @@ export class FormComplexComponent extends ElementBase<ComplexModel> {
     this.value[prop] = value;
     this.value = { ...this.value };
   }
+  
+  protected validate(): Observable<ValidationResult> {
+    return Observable.of({error: 'Complex Model is Invalid'});
+  }
 }
-
-let identifier = 0;
