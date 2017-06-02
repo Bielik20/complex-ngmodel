@@ -32,5 +32,12 @@
     (ngModelChange)='test("coordinates")'>
   </coordinates-form>
 
+  <complex-form
+    
+    name="complexModel"
+    [(ngModel)]="coordinatesModel"
+    (ngModelChange)='test("complex")'>
+  </complex-form>
+
   <button type="Submit" [disabled]="!form.valid">Submit</button>
 </form>

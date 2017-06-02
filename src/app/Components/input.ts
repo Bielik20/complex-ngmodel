@@ -33,6 +33,11 @@ import {animations} from '../Base/animations';
         *ngIf="(model.control.dirty || model.control.touched) && (invalid | async)"
         [messages]="failures | async">
       </validation>
+      <ul>
+        <li>Dirty: <span *ngIf="model.control.dirty">YES</span></li>
+        <li>Touched: <span *ngIf="model.control.touched">YES</span></li>
+        <li>Invalid: <span *ngIf="invalid | async">YES</span></li>
+      </ul>
     </div>
   `,
   animations,

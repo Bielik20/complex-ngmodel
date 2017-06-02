@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 
 import { FormTextComponent } from './Components/input';
 import { FormSelectComponent } from './Components/select';
+import { FormComplexComponent } from './Components/complex-form';
 import { ValidationComponent } from './Components/validation';
 import { CoordinatesFormComponent } from './Components/coordinates-form';
 import { HexadecimalValueValidator } from './Validators/hexadecimal-validator';
@@ -17,6 +18,7 @@ import { HexadecimalValueValidator } from './Validators/hexadecimal-validator';
     AppComponent,
     FormTextComponent,
     FormSelectComponent,
+    FormComplexComponent,
     CoordinatesFormComponent,
     HexadecimalValueValidator,
     ValidationComponent

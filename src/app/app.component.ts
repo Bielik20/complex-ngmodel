@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MyCoordinates } from "app/Models/Coordinates";
+import { ComplexModel } from "app/Models/complex-model";
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ export class AppComponent {
     latitude: 50,
     longitude: 10
   };
+  public complexModel: ComplexModel;
 
   onSubmit(value) {
     alert(`Submit: ${JSON.stringify(value)}`);
