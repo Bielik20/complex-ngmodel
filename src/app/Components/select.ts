@@ -20,7 +20,7 @@ import {animations} from '../Base/animations';
   selector: 'form-select',
   template: `
     <div>
-      <label *ngIf="label" [attr.for]="identifier">{{label}}</label>
+      <label *ngIf="label">{{label}}</label>
       <select
           [(ngModel)]="value"
           [ngClass]="{invalid: ((model.control.dirty || model.control.touched) &&  (invalid | async))}"
@@ -48,8 +48,6 @@ export class FormSelectComponent extends ElementBase<string> {
 
   @ViewChild(NgModel) model: NgModel;
 
-  public identifier = `form-select-${identifier++}`;
-
   constructor(
     @Optional() @Inject(NG_VALIDATORS) validators: Array<any>,
     @Optional() @Inject(NG_ASYNC_VALIDATORS) asyncValidators: Array<any>,
@@ -57,5 +55,3 @@ export class FormSelectComponent extends ElementBase<string> {
     super(validators, asyncValidators);
   }
 }
-
-let identifier = 0;

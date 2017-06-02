@@ -20,7 +20,7 @@ import {animations} from '../Base/animations';
   selector: 'form-text',
   template: `
     <div>
-      <label *ngIf="label" [attr.for]="identifier">{{label}}</label>
+      <label *ngIf="label">{{label}}</label>
       <input
         type="text"
         [placeholder]="placeholder"
@@ -53,8 +53,6 @@ export class FormTextComponent extends ElementBase<string> {
 
   @ViewChild(NgModel) model: NgModel;
 
-  public identifier = `form-text-${identifier++}`;
-
   constructor(
     @Optional() @Inject(NG_VALIDATORS) validators: Array<any>,
     @Optional() @Inject(NG_ASYNC_VALIDATORS) asyncValidators: Array<any>,
@@ -62,5 +60,3 @@ export class FormTextComponent extends ElementBase<string> {
     super(validators, asyncValidators);
   }
 }
-
-let identifier = 0;
