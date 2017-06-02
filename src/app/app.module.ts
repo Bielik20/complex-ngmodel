@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { FormTextComponent } from './Components/input';
+import { FormSelectComponent } from './Components/select';
 import { ValidationComponent } from './Components/validation';
 import { CoordinatesFormComponent } from './Components/coordinates-form';
 import { HexadecimalValueValidator } from './Validators/hexadecimal-validator';
@@ -15,6 +16,7 @@ import { HexadecimalValueValidator } from './Validators/hexadecimal-validator';
   declarations: [
     AppComponent,
     FormTextComponent,
+    FormSelectComponent,
     CoordinatesFormComponent,
     HexadecimalValueValidator,
     ValidationComponent

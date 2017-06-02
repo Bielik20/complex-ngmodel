@@ -13,6 +13,18 @@
     (ngModelChange)='test("simple")'>
   </form-text>
 
+  <form-select
+    required
+    name="dropdownValue"
+    label="Value 2"
+    placeholder="Select a dropdown value"
+    [(ngModel)]="dropdownValue">
+    <option [value]="1">Option One</option>
+    <option [value]="2">Option Two</option>
+    <option [value]="3">Option Three</option>
+    <option [value]="4">Option Four</option>
+  </form-select>
+
   <coordinates-form
     required
     name="coordinatesModel"

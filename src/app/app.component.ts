@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'app works!';
 
   public simpleValue: string = '';
+  public dropdownValue: string = '';
   public coordinatesModel: MyCoordinates = {
     latitude: 50,
     longitude: 10
