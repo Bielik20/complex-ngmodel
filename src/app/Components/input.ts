@@ -9,9 +9,12 @@ import {
 import {
   NgModel,
   NG_VALUE_ACCESSOR,
+  NG_VALIDATORS,
+  NG_ASYNC_VALIDATORS,
 } from '@angular/forms';
 
-import {ValueAccessorBase} from '../Base/value-accessor';
+import {ElementBase} from '../Base/element-base';
+import {animations} from '../Base/animations';
 
 @Component({
   selector: 'form-text',
@@ -22,18 +25,24 @@ import {ValueAccessorBase} from '../Base/value-accessor';
         type="text"
         [placeholder]="placeholder"
         [(ngModel)]="value"
-        [ngClass]="{invalid: (invalid | async)}"
+        [ngClass]="{invalid: ((model.control.dirty || model.control.touched) &&  (invalid | async))}"
         [id]="identifier"
       />
+      <validation
+        [@flyInOut]="'in,out'"
+        *ngIf="(model.control.dirty || model.control.touched) && (invalid | async)"
+        [messages]="failures | async">
+      </validation>
     </div>
   `,
+  animations,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: FormTextComponent,
     multi: true,
   }],
 })
-export class FormTextComponent extends ValueAccessorBase<string> {
+export class FormTextComponent extends ElementBase<string> {
   @Input() public label: string;
   @Input() public placeholder: string;
 
@@ -41,8 +50,11 @@ export class FormTextComponent extends ValueAccessorBase<string> {
 
   public identifier = `form-text-${identifier++}`;
 
-  constructor() {
-    super();
+  constructor(
+    @Optional() @Inject(NG_VALIDATORS) validators: Array<any>,
+    @Optional() @Inject(NG_ASYNC_VALIDATORS) asyncValidators: Array<any>,
+  ) {
+    super(validators, asyncValidators);
   }
 }
 

@@ -15,11 +15,10 @@
 
   <coordinates-form
     required
-    hexadecimal
     name="coordinatesModel"
     [(ngModel)]="coordinatesModel"
     (ngModelChange)='test("coordinates")'>
   </coordinates-form>
 
-  <button type="Submit">Submit</button>
+  <button type="Submit" [disabled]="!form.valid">Submit</button>
 </form>
